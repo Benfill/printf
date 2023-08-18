@@ -5,8 +5,8 @@ int	main()
 	int	i, y;
 
 
-	char *str = NULL;
-	i = printf("%szbi\n", str);
-	y = _printf("%s", str);
-	printf("\n%d\n", i);
+	char str[5] = "";
+	i = printf("%%\n");
+	y = _printf("%%\n");
+	printf("%d\n%d\n", i, y);
 }

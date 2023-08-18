@@ -1,5 +1,5 @@
 #include    "main.h"
-#include    <stdarg.h>
+
 /**
  * 
  * 
@@ -16,7 +16,7 @@ int     _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			i++;
+            i++;
 			switch (format[i])
 			{
 				case 'c':
@@ -30,10 +30,13 @@ int     _printf(const char *format, ...)
 				case '%':
 					len += _putchar('%');
 					break;
+
 				default:
 					break;
 			}
 		}
+        else
+            len += _putchar(format[i]);
 	}
 	va_end(p);
 	return (len);

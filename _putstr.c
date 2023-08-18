@@ -10,12 +10,8 @@ int	_putstr(char *str)
 	int	i;
 
 	if (!str)
-	{
-		write(1, "(nil)", 5);
-	}
+		return (write(1, "(null)", 6));
 	for (i = 0; str[i]; i++)
-	{
-		_putchar(str[i]);        
-	}
+		_putchar(str[i]);
 	return (i);
 }
