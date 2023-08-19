@@ -31,7 +31,12 @@ int     _printf(const char *format, ...)
 					len += _putchar('%');
 					break;
 
+                case 'b':
+                    len += _binary(va_arg(p, int));
+                    break;
+
 				default:
+                    len += _putchar(format[i]);
 					break;
 			}
 		}
