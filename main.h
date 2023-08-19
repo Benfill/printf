@@ -5,6 +5,8 @@
 #include <stdlib.h>
 #include <stdarg.h>
 
+#define BUFFER_SIZE 1024
+
 int _putchar(char c);
 int _printf(const char *format, ...);
 int _putstr(char *str, char case_s);
@@ -13,5 +15,6 @@ void _putnbr(int n, int *len);
 void _unsigned(unsigned n, int *len);
 void _octal(unsigned int n, int *len);
 void _hexadecimal(unsigned int n, int *len, char case_x);
+int _putptr(void *ptr);
 
 #endif

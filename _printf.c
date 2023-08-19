@@ -66,6 +66,9 @@ int _printf(const char *format, ...)
 				len += _putstr(va_arg(p, char *), 'S');
 				break;
 
+			case 'p':
+				len += _putptr(va_arg(p, void *));
+				break;
 			default:
 				len += _putchar(format[i]);
 				break;
