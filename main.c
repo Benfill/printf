@@ -6,7 +6,7 @@ int	main()
 
 
 	char str[5] = "";
-	i = printf("%i\n", -10);
-	y = _printf("%i\n", -98);
+	i = printf("%X\n", 30);
+	y = _printf("%X\n", 30);
 	printf("%d\n%d\n", i, y);
 }

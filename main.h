@@ -10,5 +10,8 @@ int _printf(const char *format, ...);
 int _putstr(char *str);
 int _binary(int n);
 void _putnbr(int n, int *len);
+void _unsigned(unsigned n, int *len);
+void _octal(unsigned int n, int *len);
+void _hexadecimal(unsigned int n, int *len, char case_x);
 
 #endif
