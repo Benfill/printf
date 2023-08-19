@@ -9,10 +9,19 @@
 
 void _putnbr(int n, int *len)
 {
+	if (n == -2147483648)
+	{
+		(*len) += _putchar('-');
+		(*len) += _putchar('2');
+		_putnbr(147483648, len);
+		return;
+	}
 	if (n < 0)
 	{
 		(*len) += _putchar('-');
-		_putnbr(-n, len);
+		n = -n;
+		_putnbr(n, len);
+		return;
 	}
 	else if (n > 9)
 	{
