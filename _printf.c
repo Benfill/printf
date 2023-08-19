@@ -14,6 +14,9 @@ int _printf(const char *format, ...)
 	va_list p;
 	void *ptr;
 
+	if (!format)
+		return (-1);
+
 	len = 0;
 	va_start(p, format);
 	for (i = 0; format[i]; i++)
@@ -75,7 +78,9 @@ int _printf(const char *format, ...)
 					len += _putptr(ptr);
 				break;
 			default:
-				len += _putchar(format[i]);
+				len += _putchar('%');
+				if (format[i] != '\0')
+					len += _putchar(format[i]);
 				break;
 			}
 		}
