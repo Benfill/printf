@@ -24,5 +24,5 @@ int _binary(int n)
 	}
 	for (j = i - 1; j >= 0; j--)
 		len += _putchar(48 + b[j]);
-	return (len); 
+	return (len);
 }

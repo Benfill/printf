@@ -12,6 +12,7 @@ int _printf(const char *format, ...)
 {
 	int i, len;
 	va_list p;
+	void *ptr;
 
 	len = 0;
 	va_start(p, format);
@@ -47,11 +48,11 @@ int _printf(const char *format, ...)
 				break;
 
 			case 'u':
-				_unsigned(va_arg(p, unsigned int), &len);
+				_unsigned(va_arg(p, unsigned int ), &len);
 				break;
 
 			case 'o':
-				_octal(va_arg(p, unsigned int), &len);
+				_octal(va_arg(p, unsigned int ), &len);
 				break;
 
 			case 'x':
@@ -67,7 +68,11 @@ int _printf(const char *format, ...)
 				break;
 
 			case 'p':
-				len += _putptr(va_arg(p, void *));
+				ptr = va_arg(p, void *);
+				if (ptr == ((void *)0))
+					len += _putstr("(nil)", 's');
+				else
+					len += _putptr(ptr);
 				break;
 			default:
 				len += _putchar(format[i]);

@@ -19,11 +19,15 @@ int _putptr(void *ptr)
 
 	do {
 		char digit = address % 16;
-		if (digit < 10) {
+
+		if (digit < 10)
+		{
 			buffer[index] = '0' + digit;
-		} else {
+		} else
+		{
 			buffer[index] = 'a' + (digit - 10);
 		}
+
 		address /= 16;
 		index--;
 		length++;
