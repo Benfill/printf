@@ -1,11 +1,11 @@
-#include    "main.h"
+#include "main.h"
 
 /**
- * 
- * 
-*/
+ *
+ *
+ */
 
-int     _binary(int n)
+int _binary(int n)
 {
     int len, i, j;
     int b[32];
