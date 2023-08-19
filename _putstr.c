@@ -16,7 +16,7 @@ int _putstr(char *str, char case_s)
 	{
 		if (case_s == 'S')
 		{
-			if (0 < str[i] && str[i] < 32 || str[i] >= 127)
+			if ((0 < str[i] && str[i] < 32) || str[i] >= 127)
 			{
 				len += write(1, "\\x", 2);
 				_hexadecimal(str[i], &len, 'X');

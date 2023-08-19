@@ -14,7 +14,7 @@ void _hexadecimal(unsigned int n, int *len, char case_x)
     }
     else
     {
-        if (n >= 0 && n <= 9)
+        if (n <= 9)
             (*len) += _putchar(48 + n);
         else
         {

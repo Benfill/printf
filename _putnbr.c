@@ -7,9 +7,7 @@
 
 void _putnbr(int n, int *len)
 {
-    if (n == -2147483648)
-        (* len) += write(1, "-2147483648", 11);
-    else if (n < 0)
+    if (n < 0)
     {
         (* len) += _putchar('-');
         _putnbr(-n, len);
