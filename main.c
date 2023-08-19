@@ -1,12 +1,11 @@
-#include		"main.h"
+#include "main.h"
 
-int	main()
+int main()
 {
-	int	i, y;
-
+	int i, y;
 
 	char str[5] = "";
-	i = printf("%X\n", 30);
-	y = _printf("%X\n", 30);
+	i = printf("%S\n", "Best\nSchool");
+	y = _printf("%S\n", "Best\nSchool");
 	printf("%d\n%d\n", i, y);
 }

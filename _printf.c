@@ -24,7 +24,7 @@ int _printf(const char *format, ...)
 				break;
 
 			case 's':
-				len += _putstr(va_arg(p, char *));
+				len += _putstr(va_arg(p, char *), 's');
 				break;
 
 			case '%':
@@ -57,6 +57,10 @@ int _printf(const char *format, ...)
 
 			case 'X':
 				_hexadecimal(va_arg(p, unsigned int), &len, 'X');
+				break;
+
+			case 'S':
+				len += _putstr(va_arg(p, char *), 'S');
 				break;
 
 			default:
