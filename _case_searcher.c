@@ -73,6 +73,9 @@ void	case_searcher_2(va_list p, char c, int *len)
 			else
 				(*len) += _putptr(ptr);
 			break;
+		case 'r':
+			(*len) += _reverse(va_arg(p, char *));
+			break;
 		default:
 			if (c != '\0')
 				(*len) += _putchar(c);

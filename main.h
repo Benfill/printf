@@ -18,6 +18,7 @@ void _unsigned_int(unsigned int n, int *len);
 void _octal(unsigned int n, int *len);
 void _hexadecimal(unsigned int n, int *len, char case_x);
 int _putptr(void *ptr);
+int _reverse(char *str);
 
 #endif
 
