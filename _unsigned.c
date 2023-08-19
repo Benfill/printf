@@ -1,8 +1,10 @@
 #include "main.h"
 
 /**
+ * _unsigned - print the unsigned
  *
- *
+ * @n: number
+ * @len: length
  */
 
 void _unsigned(unsigned int n, int *len)

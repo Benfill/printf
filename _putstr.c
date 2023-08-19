@@ -1,8 +1,12 @@
 #include "main.h"
 
 /**
+ * _putstr - print string
  *
+ * @str: the string
+ * @case_s: case s
  *
+ * Return: Length
  */
 
 int _putstr(char *str, char case_s)

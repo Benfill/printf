@@ -1,8 +1,11 @@
 #include "main.h"
 
 /**
+ * _printf - printf implementation
  *
+ * @format: the format
  *
+ * Return: length of printed value
  */
 
 int _printf(const char *format, ...)
