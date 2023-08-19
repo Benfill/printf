@@ -31,6 +31,10 @@ int     _printf(const char *format, ...)
 					len += _putchar('%');
 					break;
 
+				case 'd':
+					_putnbr(va_arg(p, int), &len);
+					break;
+
                 case 'b':
                     len += _binary(va_arg(p, int));
                     break;
