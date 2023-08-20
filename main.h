@@ -11,7 +11,7 @@ int _putchar(char c);
 int _printf(const char *format, ...);
 void case_searcher(va_list, const char *, int *, int *);
 void case_searcher_2(va_list, const char *, int *, int *);
-void _case_searcher_3(va_list, const char *, int *, int *);
+void case_searcher_3(va_list, const char *, int *, int *, char);
 int _putstr(char *str, char case_s);
 int _binary(int n);
 void _putnbr(int n, int *len);

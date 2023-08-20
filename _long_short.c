@@ -41,7 +41,7 @@ void _long_short(va_list args, char flag, char c, int *len)
 		if (flag == 'l')
 		{
 			unsigned long int n = va_arg(args, unsigned long);
-			printf("HERE");
+
 			_octal(n, len);
 		} else if (flag == 'h')
 		{
