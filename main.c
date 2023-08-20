@@ -8,9 +8,7 @@
 
 int main(void)
 {
-	int x = printf("HI\n");
-	int y = _printf("%m\n");
-
-	printf("this is y = %d, this is y = %d\n", x, y);
+	int i = _printf("%hu\n", 65537);
+	_printf("%d\n", i);
 	return (0);
 }

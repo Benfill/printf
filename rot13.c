@@ -28,7 +28,8 @@ void rot13(char *str, int *len)
 			}
 			j++;
 		}
-		if (!rot[j]){
+		if (!rot[j])
+		{
 			(*len) += _putchar(str[i]);
 		}
 		j = 0;
