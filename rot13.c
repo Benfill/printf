@@ -10,8 +10,8 @@ void rot13(char *str, int *len)
 {
 	int i;
 	int j;
-	char rot[52] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	char swap[52] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+	char rot[53] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char swap[53] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
 	if (!str)
 		(*len) += (write(1, "(null)", 6));
@@ -19,7 +19,7 @@ void rot13(char *str, int *len)
 	j = 0;
 	while (str[i])
 	{
-		while (j <= 52)
+		while (j <= 53)
 		{
 			if (str[i] == rot[j])
 			{
@@ -27,6 +27,9 @@ void rot13(char *str, int *len)
 				break;
 			}
 			j++;
+		}
+		if (!rot[j]){
+			(*len) += _putchar(str[i]);
 		}
 		j = 0;
 		i++;
