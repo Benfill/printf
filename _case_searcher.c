@@ -5,6 +5,7 @@
  * @p: next argument
  * @c: character to be checked
  * @len: pointer to the length counter
+ * @i: index
  */
 
 void	case_searcher(va_list p, const char *c, int *len, int *i)
@@ -49,9 +50,10 @@ void	case_searcher(va_list p, const char *c, int *len, int *i)
  * @p: next argument
  * @c: character to be checked
  * @len: pointer to the length counter
+ * @i: index
  */
 
-void	case_searcher_2(va_list p, const char *c, int *len, int *i)
+void case_searcher_2(va_list p, const char *c, int *len, int *i)
 {
 	void	*ptr;
 
@@ -87,6 +89,7 @@ void	case_searcher_2(va_list p, const char *c, int *len, int *i)
 			break;
 
 		default:
+			(*len) += _putchar('%');
 			if (c[*i] != '\0')
 				(*len) += _putchar(c[*i]);
 			break;

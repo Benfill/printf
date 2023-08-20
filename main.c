@@ -1,8 +1,16 @@
 #include "main.h"
 
-int main()
+/**
+ * main - main function
+ *
+ * Return: 0 Alwais
+*/
+
+int main(void)
 {
-    int x = printf("%R\n", "ZBI");
-    int y = _printf("%R\n", "ZBI");
-    printf("this is x = %d\nthis is y = %d\n", x, y);
+	int x = printf("HI\n");
+	int y = _printf("%m\n");
+
+	printf("this is y = %d, this is y = %d\n", x, y);
+	return (0);
 }
