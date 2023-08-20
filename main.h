@@ -9,8 +9,8 @@
 
 int _putchar(char c);
 int _printf(const char *format, ...);
-void case_searcher(va_list, char, int*);
-void case_searcher_2(va_list, char, int*);
+void case_searcher(va_list, const char *, int *, int *);
+void case_searcher_2(va_list, const char *, int *, int *);
 int _putstr(char *str, char case_s);
 int _binary(int n);
 void _putnbr(int n, int *len);
@@ -19,6 +19,6 @@ void _octal(unsigned int n, int *len);
 void _hexadecimal(unsigned int n, int *len, char case_x);
 int _putptr(void *ptr);
 int _reverse(char *str);
+void rot13(char *str, int*);
 
 #endif
-

@@ -23,7 +23,7 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
-			case_searcher(p, format[i], &len);
+			case_searcher(p, format, &len, &i);
 		}
 		else
 			len += _putchar(format[i]);

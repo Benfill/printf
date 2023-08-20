@@ -7,9 +7,9 @@
  * @len: pointer to the length counter
  */
 
-void	case_searcher(va_list p, char c, int *len)
+void	case_searcher(va_list p, const char *c, int *len, int *i)
 {
-	switch (c)
+	switch (c[*i])
 	{
 		case 'c':
 			(*len) += _putchar(va_arg(p, int));
@@ -40,7 +40,7 @@ void	case_searcher(va_list p, char c, int *len)
 			_hexadecimal(va_arg(p, unsigned int), len, 'x');
 			break;
 		default:
-			case_searcher_2(p, c, len);
+			case_searcher_2(p, c, len, i);
 	}
 }
 
@@ -51,11 +51,11 @@ void	case_searcher(va_list p, char c, int *len)
  * @len: pointer to the length counter
  */
 
-void	case_searcher_2(va_list p, char c, int *len)
+void	case_searcher_2(va_list p, const char *c, int *len, int *i)
 {
 	void	*ptr;
 
-	switch (c)
+	switch (c[*i])
 	{
 
 		case 'X':
@@ -76,9 +76,19 @@ void	case_searcher_2(va_list p, char c, int *len)
 		case 'r':
 			(*len) += _reverse(va_arg(p, char *));
 			break;
+
+		case 'R':
+			rot13(va_arg(p, char *), len);
+			break;
+		case ' ':
+			while (c[*i] == ' ')
+				(*i)++;
+			case_searcher(p, c, len, i);
+			break;
+
 		default:
-			if (c != '\0')
-				(*len) += _putchar(c);
+			if (c[*i] != '\0')
+				(*len) += _putchar(c[*i]);
 			break;
 	}
 }
