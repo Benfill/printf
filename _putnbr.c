@@ -1,6 +1,31 @@
 #include "main.h"
 
 /**
+ * _putnbr_long - print nbr
+ *
+ * @n: number
+ * @len: length
+ */
+
+void _putnbr_long(long int n, int *len)
+{
+	if (n < 0)
+	{
+		(*len) += _putchar('-');
+		n = -n;
+		_putnbr_long(n, len);
+		return;
+	}
+	else if (n > 9)
+	{
+		_putnbr_long(n / 10, len);
+		_putnbr_long(n % 10, len);
+	}
+	else
+		(*len) += _putchar(48 + n);
+}
+
+/**
  * _putnbr - print nbr
  *
  * @n: number

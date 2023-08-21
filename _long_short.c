@@ -15,7 +15,7 @@ void _long_short(va_list args, char flag, char c, int *len)
 	if (c == 'i' || c == 'd')
 	{
 		if (flag == 'l')
-			_putnbr(va_arg(args, long int), len);
+			_putnbr_long(va_arg(args, long int), len);
 		else if (flag == 'h')
 			_putnbr(va_arg(args, int), len);
 		else if (flag == '+')
@@ -29,14 +29,14 @@ void _long_short(va_list args, char flag, char c, int *len)
 	else if (c == 'u')
 	{
 		if (flag == 'l')
-			_unsigned_int(va_arg(args, unsigned long), len);
+			_unsigned_long(va_arg(args, unsigned long), len);
 		else if (flag == 'h')
 			_unsigned_int(va_arg(args, unsigned int), len);
 	}
 	else if (c == 'o')
 	{
 		if (flag == 'l')
-			_octal(va_arg(args, unsigned long), len);
+			_octal_long(va_arg(args, unsigned long), len);
 		else if (flag == 'h')
 			_octal(va_arg(args, unsigned int), len);
 		else if (flag == '#')
@@ -63,7 +63,7 @@ void _long_short_2(va_list args, char flag, char c, int *len)
 	if (c == 'x')
 	{
 		if (flag == 'l')
-			_hexadecimal(va_arg(args, unsigned long), len, 'x');
+			_hexadecimal_long(va_arg(args, unsigned long), len, 'x');
 		else if (flag == 'h')
 			_hexadecimal(va_arg(args, unsigned int), len, 'x');
 		else if (flag == '#')
@@ -75,7 +75,7 @@ void _long_short_2(va_list args, char flag, char c, int *len)
 	else if (c == 'X')
 	{
 		if (flag == 'l')
-			_hexadecimal(va_arg(args, unsigned long), len, 'X');
+			_hexadecimal_long(va_arg(args, unsigned long), len, 'X');
 		else if (flag == 'h')
 			_hexadecimal(va_arg(args, unsigned int), len, 'X');
 		else if (flag == '#')
