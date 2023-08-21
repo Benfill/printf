@@ -22,9 +22,8 @@ int _putstr(char *str, char case_s)
 		{
 			if ((str[i] > 0 && str[i] < 32) || str[i] >= 127)
 			{
-				len += write(1, "\\x0", 2);
+				len += write(1, "\\x0", 3);
 				_hexadecimal(str[i], &len, 'X');
-				len++;
 			}
 			else
 				len += _putchar(str[i]);
