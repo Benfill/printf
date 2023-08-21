@@ -32,7 +32,8 @@ int	_reverse(char *str)
 
 	i = _strlen(str);
 	ptr = malloc(i + 1);
-
+	if (!ptr)
+		return (-1);
 	for (j = 0; j <= i; j++)
 		ptr[j] = str[i - j - 1];
 	ptr[j] = '\0';
