@@ -28,7 +28,7 @@ int	_reverse(char *str)
 	int	j;
 
 	if (!str)
-		str = ")Null(";
+		str = "(null)";
 
 	i = _strlen(str);
 	ptr = malloc(i + 1);

@@ -75,7 +75,7 @@ void case_searcher_2(va_list p, const char *c, int *len, int *i)
 		case 'p':
 			ptr = va_arg(p, void *);
 			if (ptr == ((void *)0))
-				(*len) += _putstr("(nil)", 's');
+				(*len) += _putstr("(null)", 's');
 			else
 				(*len) += _putptr(ptr);
 			break;
