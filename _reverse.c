@@ -28,7 +28,7 @@ int	_reverse(char *str)
 	int	j;
 
 	if (!str)
-		return (_putstr("(null)");
+		return (_putstr("(null)", 's'));
 
 	i = _strlen(str);
 	ptr = malloc(i + 1);
