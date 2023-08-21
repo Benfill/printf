@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _octal - print octal
+ * _octal_long - print octal
  *
  * @n: the number
  * @len: length
