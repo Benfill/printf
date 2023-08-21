@@ -16,7 +16,10 @@ int _binary(int n)
 	len = 0;
 	i = 0;
 	if (n == 0)
+	{
 		len += _putchar(48);
+		return (len);
+	}
 	while (n > 0)
 	{
 		b[i++] = n % 2;
