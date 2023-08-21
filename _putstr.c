@@ -15,7 +15,7 @@ int _putstr(char *str, char case_s)
 
 	len = 0;
 	if (!str)
-		return (write(1, "(null)", 6));
+		return (write(1, "(nil)", 5));
 	for (i = 0; str[i]; i++)
 	{
 		if (case_s == 'S')
