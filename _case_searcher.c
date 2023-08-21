@@ -22,7 +22,7 @@ void case_searcher(va_list p, const char *c, int *len, int *i)
 			(*len) += _putchar('%');
 			break;
 		case 'b':
-			(*len) += _binary(va_arg(p, int));
+			(*len) += _binary(va_arg(p, unsigned int));
 			break;
 		case 'r':
 			(*len) += _reverse(va_arg(p, char *));

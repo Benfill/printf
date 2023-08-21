@@ -8,7 +8,7 @@
  * Return: length of the binary
  */
 
-int _binary(int n)
+int _binary(unsigned int n)
 {
 	int len, i, j;
 	int b[32];
