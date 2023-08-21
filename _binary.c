@@ -20,7 +20,7 @@ int _binary(int n)
 		len += _putchar(48);
 		return (len);
 	}
-	while (n > 0)
+	while (n > 0 && i < 32)
 	{
 		b[i++] = n % 2;
 		n /= 2;
