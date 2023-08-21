@@ -9,7 +9,9 @@
 
 void _putnbr_long(long int n, int *len)
 {
-	if (n < 0)
+	if (n == LONG_MIN)
+		(*len) += write(1, "-9223372036854775808", 20);
+	else if (n < 0)
 	{
 		(*len) += _putchar('-');
 		n = -n;
