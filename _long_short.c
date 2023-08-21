@@ -10,46 +10,43 @@
 */
 void _long_short(va_list args, char flag, char c, int *len)
 {
+	int	n;
+
 	if (c == 'i' || c == 'd')
 	{
 		if (flag == 'l')
+			_putnbr(va_arg(args, long int), len);
+		else if (flag == 'h')
+			_putnbr(va_arg(args, int), len);
+		else if (flag == '+')
 		{
-			long int n = va_arg(args, long int);
-
+			n = va_arg(args, int);
+			if (n >= 0)
+				(*len) += _putchar('+');
 			_putnbr(n, len);
-		} else if (flag == 'h')
-		{
-			short int n = va_arg(args, int);
-
-			_putnbr(n, len);
-		}
-	} else if (c == 'u')
-	{
-		if (flag == 'l')
-		{
-			unsigned long int n = va_arg(args, unsigned long);
-
-			_unsigned_int(n, len);
-		} else if (flag == 'h')
-		{
-			unsigned short int n = (unsigned short int)va_arg(args, unsigned int);
-
-			_unsigned_int(n, len);
-		}
-	} else if (flag == 'o')
-	{
-		if (flag == 'l')
-		{
-			unsigned long int n = va_arg(args, unsigned long);
-
-			_octal(n, len);
-		} else if (flag == 'h')
-		{
-			unsigned short int n = (unsigned short)va_arg(args, unsigned int);
-
-			_octal(n, len);
 		}
 	}
+	else if (c == 'u')
+	{
+		if (flag == 'l')
+			_unsigned_int(va_arg(args, unsigned long), len);
+		else if (flag == 'h')
+			_unsigned_int(va_arg(args, unsigned int), len);
+	}
+	else if (c == 'o')
+	{
+		if (flag == 'l')
+			_octal(va_arg(args, unsigned long), len);
+		else if (flag == 'h')
+			_octal(va_arg(args, unsigned int), len);
+		else if (flag == '#')
+		{
+			(*len) += _putchar('0');
+			_octal(va_arg(args, int), len);
+		}
+	}
+	else
+		_long_short_2(args, flag, c, len);
 }
 
 /**
@@ -66,28 +63,25 @@ void _long_short_2(va_list args, char flag, char c, int *len)
 	if (c == 'x')
 	{
 		if (flag == 'l')
+			_hexadecimal(va_arg(args, unsigned long), len, 'x');
+		else if (flag == 'h')
+			_hexadecimal(va_arg(args, unsigned int), len, 'x');
+		else if (flag == '#')
 		{
-			unsigned long int n = va_arg(args, unsigned long);
-
-			_hexadecimal(n, len, 'x');
-		} else if (flag == 'h')
-		{
-			unsigned short int n = (unsigned short)va_arg(args, unsigned int);
-
-			_hexadecimal(n, len, 'x');
+			(*len) += write(1, "0x", 2);
+			_hexadecimal(va_arg(args, unsigned int), len, 'x');
 		}
-	} else if (c == 'X')
+	}
+	else if (c == 'X')
 	{
 		if (flag == 'l')
+			_hexadecimal(va_arg(args, unsigned long), len, 'X');
+		else if (flag == 'h')
+			_hexadecimal(va_arg(args, unsigned int), len, 'X');
+		else if (flag == '#')
 		{
-			unsigned long int n = va_arg(args, unsigned long);
-
-			_hexadecimal(n, len, 'X');
-		} else if (flag == 'h')
-		{
-			unsigned short int n = (unsigned short)va_arg(args, unsigned int);
-
-			_hexadecimal(n, len, 'X');
+			(*len) += write(1, "0X", 2);
+			_hexadecimal(va_arg(args, unsigned int), len, 'X');
 		}
 	}
 }
