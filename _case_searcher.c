@@ -59,6 +59,7 @@ void case_searcher_2(va_list p, const char *c, int *len, int *i)
 {
 	void *ptr;
 	char flag = 0;
+
 	if ((c[*i] == 'l' || c[*i] == 'h') || (c[*i] == '#' || c[*i] == '+') ||
 			(c[*i] == ' ' && (c[*i + 1] == 'd' || c[*i + 1])))
 	{
