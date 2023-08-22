@@ -44,7 +44,7 @@ void _long_short(va_list args, char flag, char c, int *len)
 		else if (flag == '#')
 		{
 			(*len) += _putchar('0');
-			_octal(va_arg(args, int), len);
+			_octal(va_arg(args, unsigned int), len);
 		}
 	}
 	else
