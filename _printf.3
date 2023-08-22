@@ -1,0 +1,66 @@
+NAME
+_printf - formatted output conversion
+
+SYNOPSIS
+#include "main.h"
+
+int _printf(const char *format, ...);
+
+
+DESCRIPTION
+The _printf function is a custom implementation of the C standard library function printf that provides formatted output conversion. It takes a format string as its first argument, followed by zero or more additional arguments, and produces formatted output based on the provided format string and arguments.
+
+FORMAT SPECIFIERS
+The following format specifiers are recognized:
+
+%c: Print a single character.
+%s: Print a null-terminated string.
+%%: Print a literal '%' character.
+%d, %i: Print a signed integer.
+%b: Print an integer in binary format.
+%u: Print an unsigned integer.
+%o: Print an integer in octal format.
+%x: Print an integer in lowercase hexadecimal format.
+%X: Print an integer in uppercase hexadecimal format.
+%S: Print a string with non-printable characters encoded as \x followed by their hexadecimal ASCII code.
+%r: Print the reversed string.
+%R: Print the rot13'ed string.
+FLAGS
+The following flags can be used with numeric conversions:
+
++: Print a '+' sign for positive numbers.
+(space): Print a space before positive values if no sign is written.
+#: Print prefix '0', '0x', or '0X' for octal, lowercase hexadecimal, and uppercase hexadecimal conversions respectively.
+-: Left-justify the output within the field width.
+LENGTH MODIFIERS
+The following length modifiers are recognized:
+
+l: For integer conversions, the argument is a long int or unsigned long int.
+h: For integer conversions, the argument is a short int or unsigned short int.
+FIELD WIDTH
+The field width specifies the minimum number of characters to be printed. If the value to be printed is shorter than this width, it will be padded with spaces (or other specified characters) to reach the specified width.
+
+PRECISION
+The precision specifies the number of digits to appear after the decimal point for floating-point conversions or the minimum number of digits to be printed for integer conversions.
+
+BUFFER
+The function uses an internal buffer of 1024 characters to minimize the number of calls to the write function. Exceeding this buffer size may result in unexpected behavior.
+
+RETURN VALUE
+The function returns the number of characters printed (excluding the null-terminating byte used to end output to strings).
+
+EXAMPLES
+#include "main.h"
+
+int main() {
+    _printf("The value is: %d\n", 42);
+    _printf("Hello, %s!\n", "world");
+    return 0;
+}
+
+SEE ALSO
+printf(3)
+
+NOTES
+This function is a custom implementation of the standard C library function printf. It aims to provide similar functionality but may have differences in behavior and limitations. Refer to the provided example and documentation for proper usage.
+

@@ -58,7 +58,7 @@ The precision specifies the number of digits to appear after the decimal point f
 
 ## Example Usage
 
-`#include "custom_printf.h"
+`#include "main.h"
 
 
 int main() {
@@ -72,5 +72,5 @@ int main() {
 
 ## Contributors
 
--   ## Anass Benfillous
+-  ## Anass Benfillous
 -  ## Achraf Eddiba
