@@ -18,11 +18,13 @@ void _long_short(va_list args, char flag, char c, int *len)
 			_putnbr_long(va_arg(args, long int), len);
 		else if (flag == 'h')
 			_putnbr(va_arg(args, int), len);
-		else if (flag == '+')
+		else if (flag == '+' || flag == ' ')
 		{
 			n = va_arg(args, int);
-			if (n >= 0)
+			if (n >= 0 && flag == '+')
 				(*len) += _putchar('+');
+			else if (n >= 0 && flag == ' ')
+				(*len) += _putchar(' ');
 			_putnbr(n, len);
 		}
 	}
