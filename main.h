@@ -28,5 +28,6 @@ void rot13(char *str, int*);
 void _long_short(va_list args, char flag, char c, int *len);
 void _long_short_2(va_list args, char flag, char c, int *len);
 void	width(va_list arg, const char *format, int *len, int *i, char sign);
+int	_atoi(char *s);
 
 #endif
