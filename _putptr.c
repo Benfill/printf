@@ -35,7 +35,7 @@ int _putptr(void *ptr)
 
 	buffer[index--] = 'x';
 	buffer[index] = '0';
-	length += sizeof(buffer) - 1 - index;
+
 	write(STDOUT_FILENO, &buffer[index], sizeof(buffer) - 1 - index);
 	return (length + 2);
 }
